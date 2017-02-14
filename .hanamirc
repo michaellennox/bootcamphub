@@ -1,0 +1,4 @@
+project=bootcamphub
+architecture=container
+test=rspec
+template=slim
