@@ -1,2 +1,5 @@
 /public/assets*
+/public/guides*
 /tmp
+
+.sass-cache
