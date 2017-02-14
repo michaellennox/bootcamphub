@@ -1,2 +1,6 @@
 /public/assets*
+/public/guides*
 /tmp
+
+.sass-cache
+.byebug_history
