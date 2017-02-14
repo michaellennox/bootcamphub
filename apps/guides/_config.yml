@@ -15,18 +15,18 @@
 # in the templates via {{ site.myvariable }}.
 title: Guides
 # email: not-actually-email@example.com
-description: > # this means to ignore newlines until "baseurl:"
+description: >
   Welcome to BootcampHub guides. This is a place for bootcamp grads to discover
   new and interesting information that help them take the next steps after
   bootcamp.
 baseurl: "/guides" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
-github_username:  michaellennox
+github_username:  bootcamphub
+github_userlink:  michaellennox/bootcamphub
 
 # Build settings
 markdown: kramdown
-theme: minima
 gems:
   - jekyll-feed
 exclude:

@@ -11,7 +11,6 @@ gem 'slim'
 
 # jekyll is used for building our static sites
 gem 'jekyll', '~> 3.4.0'
-gem 'minima', '~> 2.1.0'
 gem 'jekyll-feed', '~> 0.8.0'
 
 group :development do
@@ -22,6 +21,7 @@ end
 
 group :test, :development do
   gem 'dotenv', '~> 2.0'
+  gem 'byebug'
 end
 
 group :test do

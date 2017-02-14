@@ -1,3 +1,20 @@
+require 'hanami/static'
+
+module Hanami
+  class Static < ::Rack::Static
+    private def _urls(root)
+      return [] unless root.exist?
+
+      asset_files = Dir.chdir(root) do
+        Dir['**/*'].select { |path| File.file? path }
+      end
+      
+      Hash[asset_files.map { |entry| ["#{URL_PREFIX}#{entry}", entry] }]
+        .merge('/guides'=>'guides/index.html')
+    end
+  end
+end
+
 require 'bundler/setup'
 require 'hanami/setup'
 require 'hanami/model'
