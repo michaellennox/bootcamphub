@@ -11,9 +11,12 @@ end
 namespace :guides do
 
   desc 'builds the guides site from source'
-  task build: :environment do
-    destination = Hanami.root.join('public', 'guides')
-    guides_root = Hanami.root.join('apps', 'guides')
+  task :build do
+    require 'jekyll'
+    
+    project_root = Pathname.new(__dir__)
+    destination = project_root.join('public', 'guides')
+    guides_root = project_root.join('apps', 'guides')
 
     options = {
       'config' => guides_root.join('_config.yml').to_s,
@@ -23,4 +26,8 @@ namespace :guides do
 
     Jekyll::Commands::Build.process(options)
   end
+end
+
+Rake::Task["assets:precompile"].enhance do
+  Rake::Task["guides:build"].invoke
 end
